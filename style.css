@@ -428,12 +428,18 @@ body {
 
 #result-character {
   font-family: 'Bangers', cursive;
-  font-size: 2rem;
-  letter-spacing: 2px;
+  font-size: clamp(2.6rem, 9vw, 3.8rem);
+  letter-spacing: 4px;
   text-transform: uppercase;
   text-align: center;
-  color: var(--sp-black);
+  color: var(--sp-red);
+  text-shadow:
+    3px 3px 0 var(--sp-black),
+    -1px -1px 0 var(--sp-black),
+    1px -1px 0 var(--sp-black),
+    -1px 1px 0 var(--sp-black);
   margin-bottom: 0.4rem;
+  line-height: 1.05;
 }
 
 .char-tagline {

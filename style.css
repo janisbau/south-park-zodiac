@@ -428,16 +428,16 @@ body {
 
 #result-character {
   font-family: 'Bangers', cursive;
-  font-size: clamp(2.6rem, 9vw, 3.8rem);
+  font-size: 3.4rem;
   letter-spacing: 4px;
   text-transform: uppercase;
   text-align: center;
-  color: var(--sp-red);
+  color: #CC0000 !important;
   text-shadow:
-    3px 3px 0 var(--sp-black),
-    -1px -1px 0 var(--sp-black),
-    1px -1px 0 var(--sp-black),
-    -1px 1px 0 var(--sp-black);
+    3px 3px 0 #111111,
+    -1px -1px 0 #111111,
+    1px -1px 0 #111111,
+    -1px 1px 0 #111111;
   margin-bottom: 0.4rem;
   line-height: 1.05;
 }

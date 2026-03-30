@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>South Park Zodiac Oracle</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Comic+Neue:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Fixed starfield background -->
+  <div id="star-field" aria-hidden="true"></div>
+
+  <!-- Consulting Oracle Overlay -->
+  <div id="consulting-overlay" class="hidden" aria-live="polite">
+    <div id="consulting-wheel" aria-hidden="true"></div>
+    <p id="consulting-text">The stars are speaking...</p>
+  </div>
+
+  <!-- SECTION 1: Hero -->
+  <header id="hero">
+    <div class="hero-inner">
+      <div class="hero-stars" aria-hidden="true">✨ ⭐ 🌟 ✨ ⭐</div>
+      <h1>South Park<br>Zodiac Oracle</h1>
+      <p class="tagline">The stars... they know things, dude.</p>
+      <div class="hero-stars" aria-hidden="true">⭐ 🌟 ✨ ⭐ 🌟</div>
+    </div>
+  </header>
+
+  <!-- SECTION 2: Form -->
+  <main id="form-section">
+    <div class="form-layout">
+      <div class="form-wrapper">
+        <h2 class="form-title">Consult the Oracle</h2>
+        <form id="oracle-form" novalidate>
+          <div class="field-group">
+            <label for="birthdate">Your Birth Date</label>
+            <input type="date" id="birthdate" name="birthdate" required>
+          </div>
+          <div class="field-group">
+            <label for="birthplace">Birth Place <span class="optional">(optional)</span></label>
+            <input type="text" id="birthplace" name="birthplace" placeholder="e.g. South Park, CO" maxlength="80">
+          </div>
+          <button type="submit" id="submit-btn">Consult the Oracle!</button>
+          <p id="form-error" class="hidden" role="alert">Please enter your birth date, you piece of crap!</p>
+        </form>
+      </div>
+
+      <div class="wheel-wrapper" aria-hidden="true">
+        <div id="zodiac-wheel"></div>
+        <p class="wheel-label">The Wheel of Destiny</p>
+      </div>
+    </div>
+  </main>
+
+  <!-- SECTION 3: Result -->
+  <section id="result-section" class="hidden" aria-live="polite">
+    <div id="result-card">
+      <div id="character-art" class="character-art" role="img" aria-label="Character emoji"></div>
+
+      <div class="result-sign-row">
+        <span id="result-symbol" class="result-symbol"></span>
+        <h2 id="result-sign"></h2>
+      </div>
+
+      <p id="result-date-range" class="date-range"></p>
+
+      <h3 id="result-character"></h3>
+      <p id="result-tagline" class="char-tagline"></p>
+
+      <div id="result-traits" class="result-block">
+        <h4>Your Cosmic Traits</h4>
+        <ul id="traits-list"></ul>
+      </div>
+
+      <div id="result-funfact" class="result-block funfact-block"></div>
+
+      <div id="result-numerology" class="result-block numerology-block"></div>
+
+      <div id="result-prophecy" class="result-block prophecy-block">
+        <h4>Your Prophecy</h4>
+        <blockquote id="prophecy-text"></blockquote>
+      </div>
+
+      <div id="result-compatibility" class="result-block compat-block">
+        <h4>Cosmic Compatibility</h4>
+        <p id="compat-best"></p>
+        <p id="compat-worst"></p>
+      </div>
+
+      <div id="result-map-block" class="result-block map-block">
+        <h4>Your Birthplace on the Map</h4>
+        <div id="birth-map"></div>
+        <p id="map-label" class="map-label"></p>
+      </div>
+
+      <p id="birth-flavor" class="birth-flavor"></p>
+
+      <button id="try-again" type="button">Try Again, You Stupid Kid</button>
+    </div>
+  </section>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
